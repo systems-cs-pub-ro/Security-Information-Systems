@@ -35,6 +35,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - run: npm i --save-exact
       - run: npm ci
       - run: hugo --minify
 
